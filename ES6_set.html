@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+</head>
+<body>
+    <script>
+        // 声明一个set
+        const set = new Set();
+        const set2 = new Set(['小事儿','大事儿','喜事儿','好事儿']);
+    //    元素个数
+    //     console.log(set2.size);
+    //    添加新的元素
+    //     set2.add('坏事儿');
+        // 删除元素|
+        // set2.delete('坏事儿');
+    //    检测
+    //     set2.has('小事儿');
+    //    清空
+    //     set2.clear();
+    //     console.log(s2);
+        for (const string of set2) {
+            // console.log(string);
+        }
+        /*
+        * 用处
+        * 1.数组去重
+        * 2.交集
+        * 3.并集
+        * 4.差集
+        * */
+        //数组去重
+        let arry = [345,3,3,3,34,4,5,76,878,8,6,89,9,8,9,65,56,6,56,87,654,2,53,4,456,5,6,6,6,0,111];
+        let arry1 = [1,2,3,4,5,6,7,8,9,0,234];
+        //将数组转化为类数组 arry --> object类数组，由于set集合的属性，唯一，所以去重的效果简单实现 ---> 通过扩展运算符转化为数组
+        const s = new Set(arry);
+        // let result = [...s];
+        // 简化写
+        // let result = [...new Set(arry)];
+        // console.log(result);
+    //    交集
+        let result = [...new Set(arry)].filter(items =>{
+            let s = new Set(arry1);
+            if(s.has(items)){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        // 简写：
+        // let result= [...new Set(arry)].filter(items =>{new Set(arry1).has(items)});
+        console.log(result);
+// 并集
+        let bin_ = [...new Set([...arry1,...arry])];
+        console.log(bin_);
+// 差集
+        let result2 = [...new Set(arry)].filter(items =>{
+            let s = new Set(arry1);
+            if(!(s.has(items))){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        console.log(result2);
+    </script>
+</body>
+</html>

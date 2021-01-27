@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <style>
+    </style>
+    <script>
+        // Promise 是异步编程的一个方案，语法上是一个构造函数，主要是解决回调地狱的问题，用来封装异步操作并可以获取其成功或失败的结果。
+        // 1.Promise 构造函数：Promise(excutor){}
+        // 2.Promise.prototype.then() 方法
+        // 3.Promise.prototype.catch()方法
+        /*
+        * 异步操作
+        *
+        * */
+    //    实例化 Promise 对象
+        const p = new Promise(function (resolve,reject){
+            // 成功
+            let data = '数据库中的用户信息';
+            // resolve(data);
+            // 失败
+            let data1 = '获取数据库中的信息失败';
+            reject(data1);
+        },1000);
+
+        p.then(function (value){
+            // 成功
+            // console.log(value);
+        },function (reason){
+            // 失败
+            // console.log(reason);
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>

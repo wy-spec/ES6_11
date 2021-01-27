@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+</head>
+<body>
+<!--ES9新特性-->
+<!--
+    正则捕获分组
+-->
+<script>
+
+    const school = {
+        name:'111',
+        arry:[1,2,3,2,344,3]
+    }
+    //获取对象中所有的键，参数是对象
+    // Object.keys();
+    //获取对象中所有的值，参数是对象
+    // Object.values();
+    //获取所有的键值对，返回结果是数组类型，可以转化为map,从而使用map的api方法
+    // Object.entries();
+    const m = new Map(Object.entries(school));
+    console.log(m.get('name'));
+    // Object.assign()
+//    React参数不仅对数组操作，同时也能对对象进行操作和合并 ======>  ...args
+//     const newobj = {...object1,...object2};
+    // 传参数传对象时也可以使用扩展运算符代替
+
+
+
+    // 正则命名捕获分组 ?<> 加别名，方便调用，否则就只能通过下标获得   正向断言：/\d+(?=字符串的值)/、反向断言：/(?<=)\d+/ 判断是否满足，是则满足正则检索出的内容
+    let str = `<a href="http:127.0.0.1:8080">百度</a>`
+    //提取url 和 文本
+    // const reg = /<a href="(.*)">(.*)<\/a>/
+    const reg = /<a href="(?<url>.*)">(?<text>.*)<\/a>/gs
+    const result = reg.exec(str);
+    // console.log(result.groups.url);
+    // console.log(result.groups.text);
+
+    // 元字符 .*? 非贪婪的任意字符，非贪婪的意思是，匹配任意数量的重复
+    // . 出换行外的任意字符 /gs g :全局 s:去掉所有换行空白
+    //将字符串通过正则检索出结果，返回数组，可以用扩展运算符和for...of遍历
+
+    //ES10~ES11
+
+    // str.matchAll(reg);
+    // 类似then async await
+    // Promise.allSettled([多个Promise对象]); 如果有成功，则返回状态是成功,但是失败的值会在数组中
+    // Promise.all([多个Promise对象]); 如果有失败，则返回状态就是失败
+
+</script>
+</body>
+</html>

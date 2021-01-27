@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <style>
+        .ad{
+            width: 100px;
+            height: 200px;
+            background-color: #fba;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad"></div>
+    <script>
+        let ad = document.querySelector(".ad");
+        // 首先使用原声js实现
+        // 需求1，点击div 2s后 颜色变成粉色
+        ad.addEventListener("click",function (){
+            let _this = this;
+            setTimeout(function (){
+                _this.style.backgroundColor = "red"
+            },2000)
+        })
+        // 需求2， 从数组中返回偶数的元素
+        const arry = [1,2,3,4,5,6,7,8,9,10];
+
+        // const result = arry.filter(function (items){
+        //     if(items%2===0){
+        //         return items;
+        //     }
+        // });
+        //
+        const result = arry.filter(items =>{
+            if(items%2 === 0){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        console.log(result);
+    </script>
+</body>
+</html>

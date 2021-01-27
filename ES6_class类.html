@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+</head>
+<body>
+    <script>
+    // // 创建一个构造函数
+    // // 例如：手机 实例对象
+    // function Phone(brand,price){
+    //     this.brand = brand;
+    //     this.price = price;
+    // }
+    // // 给构造函数添加一个方法
+    // Phone.prototype.call = function (){
+    //     console.log("打电话的功能");
+    // }
+    // // 实例化对象
+    // let pinguo = new Phone('苹果',2000);
+    // pinguo.call();
+    // console.log(pinguo);
+
+    //class类
+    class Phone{
+        //构造方法，名字不能修改，这个方法自动执行 ,给构造函数加属性
+        constructor(brand,price) {
+            this.brand = brand;
+            this.price = price;
+        }
+
+        call(){
+            console.log("我可以打电话")
+        }
+        run(){
+            console.log("我可以跑起来")
+        }
+    }
+    // 实例化对象
+    let onePlus = new Phone('one_one',1999);
+    onePlus.call();
+    onePlus.run();
+    console.log(onePlus);
+    </script>
+</body>
+</html>

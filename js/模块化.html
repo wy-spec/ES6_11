@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="module">
+    // 通用引入方式
+    import * as m1 from "./m1.js";
+    //通过解构赋值方式引入 名字重复可以用as取别名
+    import {a , abc} from "./m1.js";
+    //默认方式
+    import {default as a} from './m1.js'
+    //简便方式 针对默认暴露
+    import m1 from './m1.js';
+    console.log(m1);
+    // Number.NEGATIVE_INFINITY
+
+</script>
+</html>

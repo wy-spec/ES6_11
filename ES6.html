@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+</head>
+<body>
+    <script>
+/*
+        let的使用
+    注意:
+        1.不能申明重复变量
+        2.属于块级作用域
+        3.不会有变量提升
+        4.不影响作用域链
+*/
+
+    let one;
+    let two ,three ,object={"name":"wnagyi"}, farther_ay=[];
+    {
+        let a = 100;
+    }
+    {
+        let a = 200;
+    }
+    {
+        let a = 300;
+    }
+    // console.log(sum);
+    // let sum = 200;
+
+    let jian = 123;
+    function run (){
+        console.log(jian);
+    }
+
+    /*
+    * const的使用
+    * 1.一般用于申明常量
+    * 2.除了数组和对象以外，申明的常量不能被赋值，否则有语法错误
+    * 3.数组和对象的解构
+    * 4.块级作用域
+    * 5.一般取名用大写（潜规则）
+    * 6.必须要设置初始值
+    * */
+
+    // 解构
+    /*数组：*/
+    const arry = ["w","s","d","a"];
+    let [a,b,c,d] = arry;
+    console.log(d);
+    /*对象：*/
+    const jiegou_ob = {
+        name:"网易",
+        xx:function (){
+            console.log("对象解构");
+        }
+    }
+    let {name , xx} = jiegou_ob;
+    xx();
+    name = "wang_yi";
+    console.log(name);
+    console.log(jiegou_ob.name);
+
+    //模板字符串 ------> ``
+    // 1.提供自动换行符
+    // 2.通过${} 赋值，做拼串
+
+    //for循环里的初始值用let申明
+
+    //对象简写
+    let name_jian = "hello";
+    let opentions = function (a,b){
+        return a+b;
+    }
+    const OBJECT_JIAN = {
+        name_jian
+    }
+    //箭头函数 --------------> ()=>{}
+    function f() {
+        console.log(this.name);
+    }
+    //1.箭头函数的this是静态的，它只会指向函数声明时所在作用域下的this的值
+    let f2 = ()=>{
+        console.log(this.name);
+    }
+    window.name = "艾特";
+    const school = {
+        name: "AT"
+    }
+    // call方法的调用this指向的不同值
+    //call方法的作用是调用所有者对象作为参数的方法
+    f.call(school);//AT
+    f2.call(school);//艾特 this是静态的
+    //2.不能作为构造函数使用的对象
+    let obj = (name , age)=>{
+        this.name = name;
+        this.age = age;
+    }
+    let me = new obj("qqq",30);
+    console.log(me);
+    //3.不能使用arguments变量
+    let fn = ()=>{
+        console.log(arguments)
+    }
+    fn(1,2,3);
+    //4.箭头函数的简写
+    //     省略小括号，当行参只有一个 let add = n=>{}
+    //     当代码体只有一行时，可以省略花括号，省略后return 必须省略  let pow = ()=> 代码体
+    </script>
+</body>
+</html>
